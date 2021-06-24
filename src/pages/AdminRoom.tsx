@@ -25,6 +25,7 @@ export function AdminRoom() {
 	const { title, questions } = useRoom(roomId)
 
 	async function handleEndRoom() {
+		// altera os dados da sala quando encerrada
 		await database.ref(`rooms/${roomId}`).update({
 			endedAt: new Date(),
 		})
